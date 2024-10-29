@@ -1,7 +1,4 @@
-﻿using Solid.dia1;
-using Solid.dia2;
-
-namespace Solid;
+﻿namespace Solid;
 
 public class Program
 {
@@ -54,6 +51,27 @@ public class Program
 
 
 
-    
+    var funcionarioGerente = new Funcionario
+    {
+        Nome = "Maria",
+        Cargo = "Gerente",            Salario = 6000,
+        Ativo = true
+    };
+
+    var funcionarioComum = new Funcionario
+    {
+        Nome = "João",
+        Cargo = "Funcionário Comum",
+        Salario = 3000,
+        Ativo = true
+    };
+
+    var salarioService = new FuncionarioSalaryService();
+        
+    decimal salarioGerente = salarioService.CalcularSalario(funcionarioGerente, new GerenteBonusCalculator());
+    Console.WriteLine($"Salário do Gerente {funcionarioGerente.Nome}: {salarioGerente}");
+
+    decimal salarioComum = salarioService.CalcularSalario(funcionarioComum, new FuncionarioComumBonusCalculator());
+    Console.WriteLine($"Salário do Funcionário Comum {funcionarioComum.Nome}: {salarioComum}");
   }
 }
