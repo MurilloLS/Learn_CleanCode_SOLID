@@ -2,6 +2,7 @@
 using Solid.dia2;
 using Solid.dia3;
 using Solid.dia4;
+using Solid.dia5;
 using Solid.Models;
 
 namespace Solid;
@@ -58,7 +59,7 @@ public class Program
 
 
     //Dia 3 - Aplicando o Princípio Aberto/Fechado (OCP)
-    
+
     // var funcionarioGerente = new Funcionario
     // {
     //     Nome = "Maria",
@@ -84,14 +85,23 @@ public class Program
     // Console.WriteLine($"Salário do Funcionário Comum {funcionarioComum.Nome}: {salarioComum}");
 
 
-    
+
 
     //Dia 4 - Aplicando o Princípio de Substituição de Liskov (LSP)
-    
-    Funcionarios funcionarioComum = new FuncionarioComum("Ana", 3000);
-    Funcionarios gerente = new Gerente("Carlos", 8000);
+
+    // Funcionarios funcionarioComum = new FuncionarioComum("Ana", 3000);
+    // Funcionarios gerente = new Gerente("Carlos", 8000);
+
+    // Console.WriteLine($"{funcionarioComum.Nome} - Bônus: {funcionarioComum.CalcularBonus():C}");
+    // Console.WriteLine($"{gerente.Nome} - Bônus: {gerente.CalcularBonus():C}");
+
+
+    dia5.FuncionarioComum funcionarioComum = new dia5.FuncionarioComum("João", 3000);
+    dia5.Gerente gerente = new dia5.Gerente("Murillo", 8000);
 
     Console.WriteLine($"{funcionarioComum.Nome} - Bônus: {funcionarioComum.CalcularBonus():C}");
     Console.WriteLine($"{gerente.Nome} - Bônus: {gerente.CalcularBonus():C}");
+
+    gerente.GerarRelatorio();
   }
 }

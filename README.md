@@ -20,3 +20,10 @@
 - Refatoração para garantir que `FuncionarioComum` e `Gerente` possam substituir `Funcionario` sem alterar o comportamento esperado.
 - Implementação de uma estrutura de classes para calcular bônus, assegurando que o cálculo seja feito de forma apropriada para cada tipo de funcionário.
 - O código agora é mais seguro para herança e promove maior flexibilidade ao adicionar novos tipos de funcionários no futuro.
+
+
+## Dia 5 - Aplicando o Princípio de Segregação de Interfaces (ISP)
+- Aplicação do Princípio de Segregação de Interfaces para manter as interfaces pequenas e específicas.
+- Criação das interfaces `IBonificacao` e `IGerenciamentoRelatorio`, para que as classes implementem apenas métodos relevantes às suas responsabilidades.
+- `FuncionarioComum` implementa apenas `IBonificacao`, enquanto `Gerente` implementa tanto `IBonificacao` quanto `IGerenciamentoRelatorio`, permitindo que cada classe tenha apenas as funcionalidades necessárias.
+- A estrutura modular reduz dependências e melhora a flexibilidade e manutenção do código.
