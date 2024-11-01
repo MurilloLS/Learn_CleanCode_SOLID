@@ -3,6 +3,7 @@ using Solid.dia2;
 using Solid.dia3;
 using Solid.dia4;
 using Solid.dia5;
+using Solid.dia6;
 using Solid.Models;
 
 namespace Solid;
@@ -96,11 +97,28 @@ public class Program
     // Console.WriteLine($"{gerente.Nome} - Bônus: {gerente.CalcularBonus():C}");
 
 
-    dia5.FuncionarioComum funcionarioComum = new dia5.FuncionarioComum("João", 3000);
-    dia5.Gerente gerente = new dia5.Gerente("Murillo", 8000);
+
+    // Dia 5 - Aplicando o Princípio de Segregação de Interfaces (ISP)
+
+    // dia5.FuncionarioComum funcionarioComum = new dia5.FuncionarioComum("João", 3000);
+    // dia5.Gerente gerente = new dia5.Gerente("Murillo", 8000);
+
+    // Console.WriteLine($"{funcionarioComum.Nome} - Bônus: {funcionarioComum.CalcularBonus():C}");
+    // Console.WriteLine($"{gerente.Nome} - Bônus: {gerente.CalcularBonus():C}");
+
+    // gerente.GerarRelatorio();
+
+
+
+    dia6.FuncionarioComum funcionarioComum = new dia6.FuncionarioComum("Murillo", 3000);
+
+    INotificador notificador = new NotificadorEmail();
+
+    dia6.Gerente gerente = new dia6.Gerente("Carlos", 8000, notificador);
 
     Console.WriteLine($"{funcionarioComum.Nome} - Bônus: {funcionarioComum.CalcularBonus():C}");
     Console.WriteLine($"{gerente.Nome} - Bônus: {gerente.CalcularBonus():C}");
+
 
     gerente.GerarRelatorio();
   }

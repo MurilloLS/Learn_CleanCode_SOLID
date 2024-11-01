@@ -27,3 +27,10 @@
 - Criação das interfaces `IBonificacao` e `IGerenciamentoRelatorio`, para que as classes implementem apenas métodos relevantes às suas responsabilidades.
 - `FuncionarioComum` implementa apenas `IBonificacao`, enquanto `Gerente` implementa tanto `IBonificacao` quanto `IGerenciamentoRelatorio`, permitindo que cada classe tenha apenas as funcionalidades necessárias.
 - A estrutura modular reduz dependências e melhora a flexibilidade e manutenção do código.
+
+
+## Dia 6 - Aplicando o Princípio de Inversão de Dependência (DIP)
+- Implementação do Dependency Inversion Principle para reduzir dependências de classes de baixo nível.
+- Criação da interface `INotificador`, possibilitando injeção de dependências para notificação (e.g., `NotificadorEmail`).
+- Modificação da classe `Gerente` para usar `INotificador` no envio de notificações e geração de relatórios.
+- O código agora é mais independente e permite substituições de dependências sem modificações no código de alto nível.
