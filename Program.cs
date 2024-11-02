@@ -4,18 +4,19 @@ using Solid.dia3;
 using Solid.dia4;
 using Solid.dia5;
 using Solid.dia6;
+using Solid.dia7;
 using Solid.Models;
 
 namespace Solid;
 
-public class Program
+public static class Program
 {
   public static void Main(string[] args)
   {
 
     // Dia 1: Introdução ao Código Limpo e SOLID.
 
-    // var funcionario = new Funcionario
+    // var funcionario = new Models.Funcionario
     // {
     //   Nome = "João",
     //   Cargo = "Gerente",
@@ -35,33 +36,33 @@ public class Program
 
 
 
-    // Dia 2 - Aplicando o Princípio de Responsabilidade Única (SRP)
+    //Dia 2 - Aplicando o Princípio de Responsabilidade Única (SRP)
 
-    //  var funcionario = new Funcionario
-    //     {
-    //         Nome = "Maria",
-    //         Cargo = "Gerente",
-    //         Salario = 6000,
-    //         Ativo = true
-    //     };
+    // var funcionaria = new Models.Funcionario
+    // {
+    //     Nome = "Maria",
+    //     Cargo = "Gerente",
+    //     Salario = 6000,
+    //     Ativo = true
+    // };
 
-    //     var statusService = new FuncionarioStatusService();
-    //     var salarioService = new FuncionarioSalaryService();
-    //     var relatorioService = new FuncionarioRelatoryService();
+    // var statusService = new dia2.FuncionarioStatusService();
+    // var salarioService = new dia2.FuncionarioSalaryService();
+    // var relatorioService = new FuncionarioRelatoryService();
 
-    //     statusService.AlternarStatusFuncionario(funcionario);
+    // statusService.AlternarStatusFuncionario(funcionaria);
 
-    //     decimal salarioFinal = salarioService.CalcularSalario(funcionario);
-    //     Console.WriteLine($"Salário Final: {salarioFinal}");
+    // decimal salario = salarioService.CalcularSalario(funcionaria);
+    // Console.WriteLine($"Salário Final: {salario}");
 
-    //     relatorioService.GerarRelatorio(funcionario);
+    // relatorioService.GerarRelatorio(funcionaria);
 
 
 
 
     //Dia 3 - Aplicando o Princípio Aberto/Fechado (OCP)
 
-    // var funcionarioGerente = new Funcionario
+    // var funcionarioGerente = new Models.Funcionario
     // {
     //     Nome = "Maria",
     //     Cargo = "Gerente",            
@@ -69,7 +70,7 @@ public class Program
     //     Ativo = true
     // };
 
-    // var funcionarioComum = new Funcionario
+    // var funcionarioComum = new Models.Funcionario
     // {
     //     Nome = "João",
     //     Cargo = "Funcionário Comum",
@@ -77,12 +78,12 @@ public class Program
     //     Ativo = true
     // };
 
-    // var salarioService = new dia3.FuncionarioSalaryService();
+    // var salaryService = new dia3.FuncionarioSalaryService();
 
-    // decimal salarioGerente = salarioService.CalcularSalario(funcionarioGerente, new GerenteBonusCalculator());
+    // decimal salarioGerente = salaryService.CalcularSalario(funcionarioGerente, new GerenteBonusCalculator());
     // Console.WriteLine($"Salário do Gerente {funcionarioGerente.Nome}: {salarioGerente}");
 
-    // decimal salarioComum = salarioService.CalcularSalario(funcionarioComum, new FuncionarioComumBonusCalculator());
+    // decimal salarioComum = salaryService.CalcularSalario(funcionarioComum, new FuncionarioComumBonusCalculator());
     // Console.WriteLine($"Salário do Funcionário Comum {funcionarioComum.Nome}: {salarioComum}");
 
 
@@ -90,36 +91,45 @@ public class Program
 
     //Dia 4 - Aplicando o Princípio de Substituição de Liskov (LSP)
 
-    // Funcionarios funcionarioComum = new FuncionarioComum("Ana", 3000);
-    // Funcionarios gerente = new Gerente("Carlos", 8000);
+    // Funcionarios funcionariaComum = new dia4.FuncionarioComum("Ana", 3000);
+    // Funcionarios gerente = new dia4.Gerente("Carlos", 8000);
 
-    // Console.WriteLine($"{funcionarioComum.Nome} - Bônus: {funcionarioComum.CalcularBonus():C}");
+    // Console.WriteLine($"{funcionariaComum.Nome} - Bônus: {funcionariaComum.CalcularBonus():C}");
     // Console.WriteLine($"{gerente.Nome} - Bônus: {gerente.CalcularBonus():C}");
 
 
 
-    // Dia 5 - Aplicando o Princípio de Segregação de Interfaces (ISP)
+    //Dia 5 - Aplicando o Princípio de Segregação de Interfaces (ISP)
 
-    // dia5.FuncionarioComum funcionarioComum = new dia5.FuncionarioComum("João", 3000);
-    // dia5.Gerente gerente = new dia5.Gerente("Murillo", 8000);
+    // dia5.FuncionarioComum funcionaryComum = new dia5.FuncionarioComum("João", 3000);
+    // dia5.Gerente gerente1 = new dia5.Gerente("Murillo", 8000);
 
-    // Console.WriteLine($"{funcionarioComum.Nome} - Bônus: {funcionarioComum.CalcularBonus():C}");
-    // Console.WriteLine($"{gerente.Nome} - Bônus: {gerente.CalcularBonus():C}");
+    // Console.WriteLine($"{funcionaryComum.Nome} - Bônus: {funcionaryComum.CalcularBonus():C}");
+    // Console.WriteLine($"{gerente1.Nome} - Bônus: {gerente1.CalcularBonus():C}");
 
-    // gerente.GerarRelatorio();
-
-
-
-    dia6.FuncionarioComum funcionarioComum = new dia6.FuncionarioComum("Murillo", 3000);
-
-    INotificador notificador = new NotificadorEmail();
-
-    dia6.Gerente gerente = new dia6.Gerente("Carlos", 8000, notificador);
-
-    Console.WriteLine($"{funcionarioComum.Nome} - Bônus: {funcionarioComum.CalcularBonus():C}");
-    Console.WriteLine($"{gerente.Nome} - Bônus: {gerente.CalcularBonus():C}");
+    // gerente1.GerarRelatorio();
 
 
-    gerente.GerarRelatorio();
+    //Dia 6 - Aplicando o Princípio de Inversão de Dependência (DIP)
+
+    // dia6.FuncionarioComum funcionaryComum2 = new dia6.FuncionarioComum("Murillo", 3000);
+
+    // INotificador notificador = new NotificadorEmail();
+
+    // dia6.Gerente gerente2 = new dia6.Gerente("Carlos", 8000, notificador);
+
+    // Console.WriteLine($"{funcionaryComum2.Nome} - Bônus: {funcionaryComum2.CalcularBonus():C}");
+    // Console.WriteLine($"{gerente2.Nome} - Bônus: {gerente2.CalcularBonus():C}");
+    // gerente2.GerarRelatorio();
+
+
+
+    // Dia 7 - Consolidando o SOLID com Cálculo de Impostos
+
+    // var impostoFederalService = new ImpostoFederalService();
+    // var calculadoraImposto = new CalculadoraImposto(impostoFederalService);
+
+    // decimal valor = 1000m;
+    // Console.WriteLine($"Imposto calculado: {calculadoraImposto.CalcularImposto(valor)}"); 
   }
 }

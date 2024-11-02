@@ -4,6 +4,7 @@
 - Refatoração inicial para código mais legível e simples.
 - Separação de responsabilidades em métodos individuais.
 
+
 ## Dia 2 - Aplicando o Princípio de Responsabilidade Única (SRP)
 - Refatoração do código do dia 1 para aplicar o Single Responsibility Principle.
 - Divisão das responsabilidades em classes dedicadas: `FuncionarioStatusService`, `FuncionarioSalaryService` e `FuncionarioRelatoryService`.
@@ -34,3 +35,13 @@
 - Criação da interface `INotificador`, possibilitando injeção de dependências para notificação (e.g., `NotificadorEmail`).
 - Modificação da classe `Gerente` para usar `INotificador` no envio de notificações e geração de relatórios.
 - O código agora é mais independente e permite substituições de dependências sem modificações no código de alto nível.
+
+
+## Dia 7 - Consolidando o SOLID com Cálculo de Impostos
+- Implementação de uma solução completa aplicando os cinco princípios SOLID no cálculo de impostos:
+  - **SRP**: Separação das responsabilidades de cálculo de impostos em `ImpostoFederalService` e `ImpostoEstadualService`.
+  - **OCP**: `CalculadoraImposto` é extensível sem necessidade de alteração, podendo receber novos tipos de impostos.
+  - **LSP**: `CalculadoraImposto` permite substituições de `ICalculoImposto`, garantindo o comportamento esperado.
+  - **ISP**: Interface `ICalculoImposto` é pequena e específica, evitando métodos desnecessários.
+  - **DIP**: `CalculadoraImposto` depende de abstrações (`ICalculoImposto`) em vez de implementações concretas.
+- Essa refatoração final aplicou o SOLID de maneira completa, tornando o sistema mais modular, fácil de testar e preparado para expansões futuras.
